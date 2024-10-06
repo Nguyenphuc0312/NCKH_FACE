@@ -7,7 +7,7 @@ app = Flask(__name__)
 camera_url = "rtsp://admin:Dung@2811@192.168.0.202:554/stream1"
 
 def gen_frames():
-    cap = cv2.VideoCapture(camera_url)  # Sử dụng camera máy tính
+    cap = cv2.VideoCapture(0)  # Sử dụng camera máy tính
     while True:
         success, frame = cap.read()
         if not success:
