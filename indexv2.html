@@ -1,8 +1,67 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Video Streaming</title>
+</head>
+<body>
+    <h1>Camera Stream</h1>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+</body>
+</html> -->
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Camera Stream</h1>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+</body>
+</html>
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Stream</title>
+</head>
+<body>
+    <h1>Camera Stream</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    
+    <script>
+        // Yêu cầu quyền truy cập camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            // Gán stream video cho phần tử video
+            var video = document.getElementById('video');
+            video.srcObject = stream;
+        })
+        .catch(function(err) {
+            console.error("Error accessing camera: " + err);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <h1>Camera Stream</h1>
